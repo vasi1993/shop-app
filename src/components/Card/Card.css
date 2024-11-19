@@ -1,0 +1,48 @@
+.card{
+    display: flex;
+    flex-direction: column;
+    
+    justify-content: center;
+    align-items: center;
+    margin: 0 2rem;
+}
+
+.card-items{
+display: flex;
+flex-direction: column;
+justify-content: flex-start;
+align-items: flex-start;
+
+
+}
+.card-image{
+    max-width: 250px;
+    width: 250px;
+    border-radius: 30px;
+}
+
+.card-title{
+    font-size: 1rem;
+    margin-top: 1rem;
+
+}
+
+.stars{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 15px;
+}
+
+
+.star-item{color: yellow;}
+
+.stars-number{
+    font-size: 0.7rem;
+    color: #404040;;
+}
+
+.card-price{
+    font-size: 1.2rem;
+    font-weight: 600;
+}

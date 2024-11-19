@@ -1,0 +1,259 @@
+.header{
+    display: flex;
+    flex-direction: row;
+    
+    justify-content: space-around;
+    align-items: center;
+    gap: 1rem;
+    width: 100% ;
+    background: rgba(242, 240, 241, 1);
+    padding: 11rem 6rem 3rem 6rem;
+    
+}
+
+.header-left{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+gap: 1rem;
+
+width: 50%;
+}
+
+.header-title{
+   position: relative;
+ 
+   margin-bottom: 1rem;
+}
+
+.header-title h1{
+    font-size: 3.8rem;
+    font-weight: 800;
+    line-height: 4rem;
+}
+
+.header-desc {
+    margin-bottom: 0.5rem;
+}
+.header-desc p{ 
+    font-size: 0.9rem;
+    color: #404040;
+}
+
+
+.header-button button{
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 0.6rem 4rem;
+    color: white;
+    background-color: black;
+    border: 1px solid black;
+    border-radius: 60px;
+    transition: 0.3s ease-in-out;
+    position: relative;
+ z-index: 0;
+    cursor: pointer;
+}
+
+.header-button button::before{
+    content: " ";
+    width: 0%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    transition: 0.3s ease-in-out;
+    background-color: white;
+    border-radius: 60px;
+    color: black;
+
+}
+
+.header-button button:hover{
+    color: black;
+}
+
+.header-button button:hover::before{
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 60px;
+}
+
+
+.header-stats{
+    display: flex;
+    justify-content: flex-start;
+  
+    align-items: flex-start;
+    gap: 2rem;
+    
+}
+
+.header-stat{
+    display: flex;
+    flex-direction: column;
+   align-items: flex-start;
+   justify-content: center;
+   width: 100%;
+   height: 100%;
+}
+
+.header-stat>:nth-child(1){
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    font-size: 3rem;
+    font-weight: 600;
+}
+
+.header-stat>:nth-child(2){
+    color: #404040;
+    font-size: 0.9rem;
+}
+
+.header-right{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    
+}
+
+.header-right-image{
+    display: flex;
+    row-gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 32rem;
+    height: 32rem;
+    overflow: hidden;
+    border-radius: 50px;
+    border: 2px solid black;
+ 
+    
+}
+
+
+.header-right img{
+    width: 100%;
+    height: 100%;
+    object-position: center;
+}
+
+@media (max-width:1280px) {
+    .header{
+        gap: 5rem;
+    }
+    .header-right-image{
+        width: 25rem;
+        height: 28rem;
+    }
+
+    .header-stat>:nth-child(1){
+        font-size: 2.5rem;
+    }
+    .header-title h1{
+        font-size: 3.5rem;
+    }
+}
+
+@media (max-width:1000px){
+    .header{
+        flex-direction: column;
+        gap: 2rem;
+        padding: 9rem 8rem 3rem 8rem;
+    }
+ .header-right{
+   display: none;
+ }
+ .header-left{
+    width: 100%;
+justify-content: center;
+ }
+}
+
+@media (max-width:650px){
+    .header{
+        padding: 9rem 3rem 2rem;
+    }
+
+    .header-right{
+        display: flex;}
+    .header-right-image{ 
+        width: 22rem;
+        height: 25rem;
+
+    }
+
+    .header-title h1{
+        font-size: 2rem;
+        line-height: 2.5rem;
+    }
+}
+
+@media (max-width:550px) {
+    
+    .header-title h1{
+        font-size: 1.7rem;
+        line-height: 2.3rem;
+    }
+    
+.header-stats{
+    flex-direction: row;
+    justify-content: flex-end;
+  
+    align-items: center;
+    gap: 1rem;
+    
+}
+
+.header-stat{
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.header-stat>:nth-child(1){
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.header-stat>:nth-child(2){
+    color: #404040;
+    font-size: 0.6rem;
+}
+
+.header-desc p{ 
+    font-size: 0.7rem;
+    color: #404040;
+}
+
+
+.header-button button{
+    font-size: 0.7rem;
+}
+
+.header-right-image{
+   
+    row-gap: 1.5rem;
+
+    width: 15rem;
+    height: 17rem;
+  
+ 
+    
+}
+
+
+
+}

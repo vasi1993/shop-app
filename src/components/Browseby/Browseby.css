@@ -1,0 +1,258 @@
+.browse-by{
+    width: 90%;
+    
+    background-color: #e9e7e7;
+    margin: 0 auto;
+    border-radius: 50px;
+}
+
+.browse-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    width: 100%;
+    
+    
+}
+
+.browse-title{
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.browse-title h1{
+    font-size: 2rem;
+}
+
+.browse-category{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  width: 90%;
+  margin-bottom: 3rem;
+
+    
+}
+
+.row1 {
+    display: grid;
+    grid-template-columns: 30% 60%; /* Second row layout with reversed dimensions */
+    grid-template-rows: 100%;
+    gap: 40px;
+    width: 100%;
+  height: 250px;
+    justify-content: center;
+   
+   
+    
+    
+
+  }
+  
+  .row2 {
+    display: grid;
+    grid-template-columns: 60% 30%; /* Second row layout with reversed dimensions */
+    justify-content: center;
+    grid-template-rows: 100%;
+    gap: 40px;
+    width: 100%;
+    height: 250px;
+   
+  }
+.browse-casual{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: transform 0.3s ease;
+   
+}
+
+.browse-casual:hover{
+    transform: scale(1.1);
+}
+
+.browse-casual p{
+    position: absolute;
+    top: 3rem;
+    left: 1rem;
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.browse-category-image{
+    width: 100%;
+    height: 100%;
+    
+    border-radius: 40px;
+    
+}
+
+.browse-formal{
+    
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.browse-formal:hover{
+    transform: scale(1.1);
+}
+
+
+.browse-formal p{
+    position: absolute;
+    top: 3rem;
+    left: 1rem;
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.browse-party{
+  
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.browse-party:hover{
+    transform: scale(1.1);
+}
+
+
+.browse-party p{
+    position: absolute;
+    top: 3rem;
+    left: 1rem;
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.browse-gym{
+   
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.browse-gym:hover{
+    transform: scale(1.1);
+}
+
+
+.browse-gym p{
+    position: absolute;
+    top: 3rem;
+    left: 1rem;
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+@media (max-width: 800px) {
+    .browse-container{
+        gap: 1rem;
+    }
+    .browse-title{
+        margin-top: 1.5rem;
+       
+    }
+    
+    .browse-title h1{
+        font-size: 1.5rem;
+    }
+    
+    
+.browse-category{
+  
+    height: 100%;
+    margin-bottom: 2rem;
+  
+      
+  }
+  
+  .row1 {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 100%;
+
+    }
+    
+    .row2 {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 100%;
+    }
+
+   
+    .browse-gym p {
+        font-size: 0.9rem;
+        left: 2rem;
+    }
+
+    .browse-casual p {
+        font-size: 0.9rem;
+        left: 2rem;
+    }
+
+    .browse-formal p{
+        font-size: 0.9rem;
+        left: 2rem;
+    } 
+    .browse-party p {
+        font-size: 0.9rem;
+        left: 2rem;
+    } 
+    
+}
+
+
+@media (max-width: 500px) {
+    .browse-gym p {
+        font-size: 0.9rem;
+        left: 1.2rem;
+        top: 1.2rem;
+    }
+
+    .browse-casual p {
+        font-size: 0.9rem;
+        left: 1.2rem;
+        top: 1.2rem;
+    }
+
+    .browse-formal p{
+        font-size: 0.9rem;
+        left: 1.2rem;
+        top: 1.2rem;
+    } 
+    .browse-party p {
+        font-size: 0.9rem;
+        left: 1.2rem;
+        top: 1.2rem;
+    } 
+}

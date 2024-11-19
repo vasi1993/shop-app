@@ -1,0 +1,76 @@
+.new-arrivals{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 5rem;
+}
+
+.new-arrivals-cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.7rem;
+    width: 100%;
+    margin: 2rem 0;
+}
+
+.new-arrivals h1{
+    font-size: 2.5rem;
+    font-weight: 800;
+    width: 100%;
+    text-align: center;
+    
+}
+
+
+.new-arrivals button{
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 0.6rem 4rem;
+    color: black;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 60px;
+    transition: 0.3s ease-in-out;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.new-arrivals button::before{
+    content: " ";
+    width: 0%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    transition: 0.3s ease-in-out;
+    background-color: black;
+    border-radius: 60px;
+    color: black;
+   
+}
+.new-arrivals button:hover{
+    color: white;
+}
+
+.new-arrivals button:hover::before{
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 60px;
+    
+}
+
+.new-arrivals hr{
+    width: 100%;
+    margin-top: 3rem;
+    height: 10%;
+    color: #404040;
+    font-weight: 300;
+}
+

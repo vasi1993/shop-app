@@ -1,0 +1,244 @@
+.newsletter{
+   position: absolute;
+ top: -6rem;
+}
+
+.newsletter-container{
+    width: 90%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    margin: 0 auto;
+    border-radius: 30px;
+    padding: 1.5rem 5rem;
+    
+}
+
+.newsletter-title{
+    width: 80%;
+}
+.newsletter-title h1{
+    color: white;
+font-size: 2.3rem;
+text-align: start;
+line-height: 3.5rem;
+}
+
+.newsletter-contact{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: flex-end;
+    align-items: flex-end;
+    width: 100%;
+}
+
+.newsletter-contact-email{
+    display: flex;
+    align-items: center;
+    border-radius: 30px;
+    background-color: white;
+    padding: 1rem 5rem;
+    gap: 10px;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.newsletter-contact-email input{
+    border: none;
+    outline: none;
+    background: transparent;
+}
+.newsletter-contact-email input::placeholder{
+    color: black;
+}
+
+.newsletter-button button{
+    padding: 1rem 5.8rem;
+    border-radius: 30px;
+    color: black;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border: 1px solid white;
+    outline: none;
+    transition: 0.3s ease-in-out;
+    position: relative;
+    background-color: white;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.newsletter-button button::before{
+    content: "";
+    width: 0%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    transition: 0.3s ease-in-out;
+    background-color: black;
+    border-radius: 30px;
+    color: white;
+    border: 0px solid white;
+}
+
+.newsletter-button button:hover{
+    color: white;
+}
+
+.newsletter-button button:hover::before{
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 30px;
+}
+
+
+@media (max-width:1000px) {
+    .newsletter-title h1{
+        
+    font-size: 2rem;
+    
+    }
+}
+
+@media (max-width:850px) {
+    .newsletter-container{
+        width: 90%;
+        height: 100%;
+       flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+       
+    }
+    
+    
+.newsletter-title{
+    width: 100%;
+}
+.newsletter-title h1{
+   
+font-size: 1.8rem;
+text-align: center;
+line-height: 2.5rem;
+}
+
+.newsletter-contact{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+
+
+}
+
+@media (max-width:600px) {
+    .newsletter-container{
+        width: 90%;
+        height: 100%;
+       flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        padding: 1.5rem 1rem;
+        
+    }
+    
+    
+.newsletter-title{
+    width: 100%;
+}
+.newsletter-title h1{
+   
+font-size: 1.5rem;
+
+line-height: 2rem;
+}
+
+.newsletter-contact{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.newsletter-contact-email{
+    display: flex;
+    align-items: center;
+    border-radius: 30px;
+    background-color: white;
+    padding: 1rem 2rem;
+    gap: 10px;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.newsletter-contact-email input{
+    border: none;
+    outline: none;
+    background: transparent;
+}
+.newsletter-contact-email input::placeholder{
+    color: black;
+    font-size: 0.7rem;
+}
+
+.newsletter-button button{
+    padding: 1.2rem 3.5rem;
+    border-radius: 30px;
+    color: black;
+    font-weight: 600;
+    font-size: 1rem;
+    border: 1px solid white;
+    outline: none;
+    transition: 0.3s ease-in-out;
+    position: relative;
+    background-color: white;
+    z-index: 1;
+    cursor: pointer;
+    width: 100%;
+}
+
+.newsletter-button p {
+    width: 100%;
+    font-size: 0.8rem;
+}
+
+.newsletter-button button::before{
+    content: "";
+    width: 0%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    transition: 0.3s ease-in-out;
+    background-color: black;
+    border-radius: 30px;
+    color: white;
+    border: 0px solid white;
+}
+
+.newsletter-button button:hover{
+    color: white;
+}
+
+.newsletter-button button:hover::before{
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 30px;
+}
+}
