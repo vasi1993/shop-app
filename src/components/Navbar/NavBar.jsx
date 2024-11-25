@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./NavBar.css";
+import "../../pages/Womens/Womens.css";
 import { CiSearch } from "react-icons/ci";
 import { BsCart3 } from "react-icons/bs";
 import { CgProfile } from "react-icons/cg";
@@ -8,11 +9,23 @@ import { Link, useNavigate } from "react-router-dom";
 import { AiOutlineMenuFold } from "react-icons/ai";
 import { AiOutlineMenuUnfold } from "react-icons/ai";
 import OutsideClickHandler from "react-outside-click-handler";
+import { IoIosArrowForward, IoIosArrowDown } from "react-icons/io";
 const NavBar = () => {
   const [menu, setMenu] = useState("shop");
   const [menuOpen, setMenuOpen] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
   const navRef = useRef();
   const navigate = useNavigate();
+
+  const toggleDropdown = () => {
+    setMenu("shop");
+    setDropdownOpen(!dropdownOpen);
+  };
+
+  const linkNavigation = () => {
+    setMenuOpen(false);
+    setDropdownOpen(false);
+  };
 
   const getMenuStyles = (menuOpen) => {
     if (document.documentElement.clientWidth <= 1000) {
@@ -35,6 +48,7 @@ const NavBar = () => {
       <OutsideClickHandler
         onOutsideClick={() => {
           setMenuOpen(false);
+          setDropdownOpen(false);
         }}
       >
         <div className="nav-left">
@@ -57,30 +71,41 @@ const NavBar = () => {
           />
 
           <ul className="nav-link mobile-menu" style={getMenuStyles(menuOpen)}>
-            <li
-              onClick={() => setMenu("shop")}
-              className={menu === "shop" ? "active" : ""}
-            >
-              <Link
-                to="/"
-                onClick={() => {
-                  setMenuOpen(false);
-                }}
+            <li className="dropdown" onClick={toggleDropdown}>
+              <button
+                href="#shop"
+                className={
+                  dropdownOpen && menu === "shop"
+                    ? " toogle-dark active"
+                    : "dropdown-toggle"
+                }
               >
-                Shop
-              </Link>
+                <p>Shop</p>
+                {dropdownOpen ? <IoIosArrowDown /> : <IoIosArrowForward />}
+              </button>
+
+              {dropdownOpen && (
+                <ul className="dropdown-menu">
+                  <li>
+                    <Link to="/womens" onClick={linkNavigation}>
+                      <p>Womens</p>
+                    </Link>
+                  </li>
+                  <li>
+                    <p>Mens</p>
+                  </li>
+                  <li>
+                    <p href="/">Kids</p>
+                  </li>
+                </ul>
+              )}
             </li>
 
             <li
               onClick={() => setMenu("new")}
               className={menu === "new" ? "active" : ""}
             >
-              <a
-                href="#new"
-                onClick={() => {
-                  setMenuOpen(false);
-                }}
-              >
+              <a href="#new" onClick={linkNavigation}>
                 New Arrivals
               </a>
             </li>
@@ -89,12 +114,7 @@ const NavBar = () => {
               onClick={() => setMenu("sale")}
               className={menu === "sale" ? "active" : ""}
             >
-              <a
-                href="#sale"
-                onClick={() => {
-                  setMenuOpen(false);
-                }}
-              >
+              <a href="#sale" onClick={linkNavigation}>
                 On Sale
               </a>
             </li>
@@ -103,12 +123,7 @@ const NavBar = () => {
               className={menu === "brands" ? "active" : ""}
             >
               {" "}
-              <a
-                href="#brands"
-                onClick={() => {
-                  setMenuOpen(false);
-                }}
-              >
+              <a href="#brands" onClick={linkNavigation}>
                 {" "}
                 Brands
               </a>

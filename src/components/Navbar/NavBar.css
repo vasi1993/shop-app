@@ -1,6 +1,6 @@
 .nav-bar{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     width: 100%;
     padding: 20px 30px 0px 30px;
@@ -13,7 +13,7 @@
 .nav-left{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     gap: 60px;
     
@@ -28,11 +28,16 @@
     font-weight: 300;
     align-items: center;
     gap: 60px;
+    padding: 0;
+    
+   
 }
 
 .nav-link li {
     cursor: pointer;
+   
 }
+
 
 .nav-link .active{
     font-weight: 600;
@@ -50,6 +55,7 @@
     align-items: center;
     justify-content: flex-end;
     gap: 30px;
+    margin-right: 6rem;
     
 }
 
@@ -79,7 +85,76 @@
     display: none;
 }
 
-@media (max-width:1000px) {
+
+
+.dropdown{
+    position: relative;
+    display: flex;
+
+   
+}
+
+.dropdown-toggle {
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: center;
+gap: 7px;
+    background: transparent;
+    border: none;
+    color: black;
+    font-size: 1.2rem;
+    font-weight: 300;
+    cursor: pointer;
+    padding: 0px 10px;
+
+   
+  }
+
+  .toogle-dark{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    background: rgba(242, 240, 241, 1);
+    padding: 10px 25px;
+     border: none;
+    color: black;
+    font-size: 1.2rem;
+    font-weight: 300;
+    cursor: pointer;
+    border-radius: 5px ;
+    transition: 0.2s ease;
+  }
+
+  .dropdown-menu {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    top:2rem;
+    left: 0;
+    background: rgba(242, 240, 241, 1);
+    list-style: none;
+    padding: 20px;
+    margin: 0;
+    border-radius: 5px;
+    transition: 0.2s ease;
+    z-index: 10;
+  }
+
+  .dropdown-menu li {
+    margin: 5px 0;
+  }
+  
+  .dropdown-menu p {
+    color: black;
+    text-decoration: none;
+    font-size: 1.2rem;
+  }
+  
+  @media (max-width:1000px) {
     .nav-mobil-icon{
         display: block;
     }
@@ -126,6 +201,56 @@
         width: 100%;
         gap: 2rem;
     }
+    
+    .dropdown{
+        flex-direction: column;   
+    }
+    
+    .dropdown-toggle {
+    display: flex;
+    flex-direction: row;
+    gap: 1px;      
+        font-size: 2rem;
+        font-weight: 100;
+        padding: 0px 0px;
+    
+       
+      }
+    
+      .toogle-dark{
+
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 7px;
+        background: white;
+        padding: 10px 25px;
+        font-size: 2rem;
+        font-weight: 300;
+      }
+    
+      .dropdown-menu {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        top:0.5rem;
+        background: white;
+        padding: 0px;
+        margin: 0;
+        z-index: 0;
+      }
+    
+      .dropdown-menu li {
+        margin: 0px 0;
+      }
+      
+      .dropdown-menu p {
+        font-size: 2rem;
+      }
+ 
 }
 
 
@@ -167,4 +292,17 @@
     .nav-left{
         gap: 20px;
     }
+
+    .dropdown-toggle {   
+        font-size: 1rem;          
+          }
+        
+          .toogle-dark{
+            font-size: 1rem;      
+          }
+        
+
+    .dropdown-menu p {
+        font-size: 1rem;
+      }
 }

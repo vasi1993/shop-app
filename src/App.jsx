@@ -6,6 +6,7 @@ import NavBar from "./components/Navbar/NavBar";
 import { Route, Routes } from "react-router-dom";
 import Cart from "./pages/Cart/Cart";
 import User from "./pages/User/User";
+import Womens from "./pages/Womens/Womens";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <NavBar />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/womens" element={<Womens />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/user" element={<User />} />
       </Routes>
