@@ -195,6 +195,7 @@ gap: 7px;
     .nav-right{
         gap: 1rem;
         width: 100%;
+        margin: 0;
     }
 
     .nav-left{
@@ -276,6 +277,7 @@ gap: 7px;
 
     .nav-right{
         gap: 10px;
+        margin: 0;
     }
 
     .nav-icon{
