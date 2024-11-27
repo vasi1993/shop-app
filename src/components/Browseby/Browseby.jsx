@@ -1,9 +1,5 @@
 import React from "react";
 import "./Browseby.css";
-import casual_img from "../../assets/causal.jpg";
-import formal_img from "../../assets/formal.jpg";
-import party_img from "../../assets/party.jpg";
-import gym_img from "../../assets/gym.jpg";
 
 const Browseby = () => {
   return (
