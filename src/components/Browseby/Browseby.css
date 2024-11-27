@@ -64,6 +64,11 @@
    
   }
 .browse-casual{
+    background-image: url("../../assets/causal.jpg");
+    background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            border-radius: 40px;
     width: 100%;
     height: 100%;
     display: flex;
@@ -88,15 +93,21 @@
 .browse-category-image{
     width: 100%;
     height: 100%;
-    
+    background-size: cover;
     border-radius: 40px;
     
 }
 
+
+
 .browse-formal{
-    
+    background-image: url("../../assets/formal.jpg");
+    background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            border-radius: 40px;
     width: 100%;
-    height: 100%;
+  height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -119,7 +130,12 @@
 }
 
 .browse-party{
-  
+    background-image: url("../../assets/party.jpg");
+    background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            border-radius: 40px;
+            
     width: 100%;
     height: 100%;
     display: flex;
@@ -144,7 +160,11 @@
 }
 
 .browse-gym{
-   
+    background-image: url("../../assets/gym.jpg");
+    background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            border-radius: 40px;
     width: 100%;
     height: 100%;
     display: flex;
@@ -186,6 +206,7 @@
   
     height: 100%;
     margin-bottom: 2rem;
+    gap: 2.5rem;
   
       
   }
@@ -196,7 +217,8 @@
       justify-content: center;
     align-items: center;
     width: 80%;
-    height: 100%;
+    height: 400px;
+    
 
     }
     
@@ -206,8 +228,14 @@
       justify-content: center;
     align-items: center;
     width: 80%;
-    height: 100%;
+    height: 400px;
+   
     }
+
+    
+.browse-casual{
+    height: 100%;
+}
 
    
     .browse-gym p {
