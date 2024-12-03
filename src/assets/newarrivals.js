@@ -1,44 +1,40 @@
-import jeansImg from './p_img43.png'
-import t_shirtImg from './p_img12.png'
-import shirtImg from './p_img14.png'
-import sleeveImg from './p_img4.png'
+import p1_img from "./product_1.png";
+import p2_img from "./product_2.png";
+import p3_img from "./product_3.png";
+import p4_img from "./product_4.png";
 
 let new_arrivals = [
     {
         id: 1,
-        image: t_shirtImg,
-        title: "T-shirt with Tape Details",
-        
-        stars_number: "4.5/5",
-        price: "120",
+    name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
+    image: p1_img,
+    new_price: 50.0,
+    old_price: 80.5,
     },
 
     {
         id: 2,
-        image: jeansImg,
-        title: "Skinny Fit Jeans",
-      
-        stars_number: "3.5/5",
-        price: "240",
+        name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse", 
+        image: p2_img,
+        new_price: 85.0,
+        old_price: 120.5,
        
     },
 
     {
         id: 3,
-        image: shirtImg,
-        title: "Checkered Shirt",
-       
-        stars_number: "4.5/5",
-        price: "180",
+        name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
+        image: p3_img,
+        new_price: 60.0,
+        old_price: 100.5,
     },
 
     {
         id: 4,
-        image: sleeveImg,
-        title: "Sleeve Striped T-shirt",
-        
-        stars_number: "4.5/5",
-        price: "130",
+        name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
+        image: p4_img,
+        new_price: 100.0,
+        old_price: 150.0,
     },
 ]
 

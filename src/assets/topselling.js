@@ -1,46 +1,44 @@
-import jeansImg from './p_img43.png'
-import t_shirtImg from './p_img12.png'
-import shirtImg from './p_img14.png'
-import sleeveImg from './p_img4.png'
-
+import p5_img from "./product_5.png";
+import p6_img from "./product_6.png";
+import p7_img from "./product_7.png";
+import p8_img from "./product_8.png";
 
 
 let top_selling = [
     {
-        id: 1,
-        image: t_shirtImg,
-        title: "Vertical Striped Shirt",
-        
-        stars_number: "5.0/5",
-        price: "212",
+        id: 5,
+    name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
+    image: p5_img,
+    new_price: 85.0,
+    old_price: 120.5,
     },
 
     {
-        id: 2,
-        image: jeansImg,
-        title: "Courage Graphic T-shirt",
-      
-        stars_number: "4.0/5",
-        price: "145",
+        id: 6,
+        name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
+
+        image: p6_img,
+        new_price: 85.0,
+        old_price: 120.5,
        
     },
 
     {
-        id: 3,
-        image: shirtImg,
-        title: "Loos Fit Bermuda Shorts",
-       
-        stars_number: "3.0/5",
-        price: "80",
+        id: 7,
+        name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
+
+        image: p7_img,
+        new_price: 85.0,
+        old_price: 120.5,
     },
 
     {
-        id: 4,
-        image: sleeveImg,
-        title: "Faded Skinny Jeans",
-        
-        stars_number: "4.5/5",
-        price: "210",
+        id: 8,
+        name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
+
+        image: p8_img,
+        new_price: 85.0,
+        old_price: 120.5,
     },
 ]
 

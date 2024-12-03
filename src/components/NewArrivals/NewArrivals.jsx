@@ -14,9 +14,9 @@ const NewArrivals = () => {
               key={idx}
               id={item.id}
               image={item.image}
-              title={item.title}
-              stars_number={item.stars_number}
-              price={item.price}
+              name={item.name}
+              // stars_number={item.stars_number}
+              new_price={item.new_price}
             />
           );
         })}

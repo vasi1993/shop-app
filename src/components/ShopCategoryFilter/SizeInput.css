@@ -1,0 +1,23 @@
+.size-input{
+    display: flex;
+    flex-direction: row;
+  
+  
+}
+
+.size-input-button{ 
+    border-radius: 35%;
+    padding: 10px 10px;
+    border: none;
+    cursor: pointer;
+    color: gray;
+}
+
+.size-input-activebutton{
+    border-radius: 35%;
+    padding: 10px 10px;
+    border: none;
+    cursor: pointer;
+    color: white;
+    background-color: black;
+}

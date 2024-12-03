@@ -24,22 +24,22 @@ const Header = () => {
         <div className="header-stats">
           <div className="header-stat">
             <span>
-              <CountUp start={140} end={200} duration={4} />
+              <CountUp start={180} end={200} duration={9} />
               <span>+</span>
             </span>
             <span>International Brands</span>
           </div>
           <div className="header-stat">
             <span>
-              <CountUp start={1500} end={2000} duration={4} />
+              <CountUp start={1990} end={2000} duration={9} />
               <span>+</span>
             </span>
-            <span>High-Quality Products</span>
+            <span>Quality Products</span>
           </div>
 
           <div className="header-stat">
             <span>
-              <CountUp start={29200} end={30000} duration={4} />
+              <CountUp start={29900} end={30000} duration={9} />
               <span>+</span>
             </span>
             <span>Happy Customers</span>

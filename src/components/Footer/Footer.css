@@ -30,7 +30,7 @@
 .footer-desc p{
     font-size: 0.7rem;
     line-height: 1rem;
-    text-align: center;
+   
 }
 
 .footer-icons{
@@ -161,6 +161,10 @@ font-size: 0.7rem;
         align-items: center;
         gap: 20px;
         width: 100%;
+    }
+
+    .footer-desc p{
+        text-align: center;
     }
 
     .footer-helps{

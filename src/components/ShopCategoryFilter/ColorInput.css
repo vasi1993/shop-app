@@ -1,0 +1,17 @@
+.checkbox-round {
+    width: 30px;
+    height: 30px;
+  
+    border-radius: 50%;
+    vertical-align: middle;
+    border: 2px solid #ddd;
+    appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.checkbox-round:checked {
+   transform: scale(1.1);
+   border: 1px solid black;
+}

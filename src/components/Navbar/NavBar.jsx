@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./NavBar.css";
-import "../../pages/Womens/Womens.css";
 import { CiSearch } from "react-icons/ci";
 import { BsCart3 } from "react-icons/bs";
 import { CgProfile } from "react-icons/cg";
@@ -80,7 +79,7 @@ const NavBar = () => {
                     : "dropdown-toggle"
                 }
               >
-                <p>Shop</p>
+                Shop
                 {dropdownOpen ? <IoIosArrowDown /> : <IoIosArrowForward />}
               </button>
 
@@ -92,10 +91,14 @@ const NavBar = () => {
                     </Link>
                   </li>
                   <li>
-                    <p>Mens</p>
+                    <Link to="/mens" onClick={linkNavigation}>
+                      <p>Mens</p>
+                    </Link>
                   </li>
                   <li>
-                    <p href="/">Kids</p>
+                    <Link to="/kids" onClick={linkNavigation}>
+                      <p>Kids</p>
+                    </Link>
                   </li>
                 </ul>
               )}
