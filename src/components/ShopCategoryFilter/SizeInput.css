@@ -21,3 +21,17 @@
     color: white;
     background-color: black;
 }
+
+@media(max-width:650px) {
+
+    
+    .size-input-button{ 
+        font-size: 0.6rem;
+    }
+
+    .size-input-activebutton{
+        font-size: 0.6rem;
+    }
+    
+
+}

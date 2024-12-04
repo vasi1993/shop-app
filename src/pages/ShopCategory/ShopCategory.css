@@ -93,3 +93,31 @@
         position: absolute;
     }
 }
+
+@media(max-width:850px) {
+    .shop-category{
+    
+        padding: 10rem 2rem 10rem 2rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: flex-start;
+        gap: 1rem;
+        position: relative;
+    }
+
+    
+    .shop-category-header-sort p{
+        display: none;
+    }
+}
+
+@media(max-width:650px){
+    .shop-category-header{
+        font-size: 0.8rem;
+    }
+
+    .sort-by {
+font-size: 0.6rem;
+    }
+}

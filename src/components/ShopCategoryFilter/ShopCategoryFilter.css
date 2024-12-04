@@ -13,6 +13,11 @@
 
 .filter-arrow{
     cursor: pointer;
+    transition: transform 0.3s ease-in;
+}
+
+.filter-arrow:hover{
+    transform: scale(1.1);
 }
 
 .filter-header{
@@ -182,4 +187,100 @@ width: 100%;
         background: white;
       
     }
+}
+
+@media(max-width:850px){
+    .filter{
+        gap: 0.7rem;
+       
+        width: 350px;
+        
+    }
+}
+
+@media(max-width:650px) {
+    .filter{
+        gap: 0.7rem;
+        padding: 1.5rem 2rem;
+        width: 300px;
+        
+    }
+    .filter-header h1 {
+        font-size: 1rem;
+    }
+
+    .filter-container{
+        gap: 0.7rem;
+    }
+
+    .filter-category{
+       
+        gap: 0.5rem;
+    }
+
+    .row{
+        font-size: 0.7rem;
+    }
+
+    .filter-price{
+        gap: 0.5rem;
+    }
+    
+    .filter-price-select{
+        margin-bottom: 15px;
+    }
+    
+    .filter-header-title p{
+        font-size: 0.9rem;
+    }
+
+    .filter-dress-style{
+        gap: 0.6rem;
+    }
+
+    .filter-dress-style-row{
+        gap: 0.6rem;
+    }
+
+    
+.filter-button{
+    font-weight: 500;
+    font-size: 0.7rem;
+    padding: 0.5rem 2rem;
+    color: white;
+    background-color: black;
+    border: 1px solid black;
+    border-radius: 60px;
+    transition: 0.3s ease-in-out;
+    position: relative;
+ z-index: 0;
+    cursor: pointer;
+}
+
+.filter-button::before{
+    content: " ";
+    width: 0%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    transition: 0.3s ease-in-out;
+    background-color: white;
+    border-radius: 60px;
+    color: black;
+}
+
+.filter-button:hover{
+    color: black;
+}
+
+.filter-button:hover::before{
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 60px;
+}
+
 }
