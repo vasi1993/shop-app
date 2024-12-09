@@ -30,6 +30,13 @@ const SIZE = [
 
 const ProductDisplay = (props) => {
   const { product } = props;
+
+  const calculateDiscount = () => {
+    const discount =
+      ((product.old_price - product.new_price) / product.old_price) * 100;
+    return discount.toFixed(2); // Round to 2 decimal places
+  };
+
   return (
     <div className="product-display">
       <div className="product-display-left">
@@ -57,7 +64,9 @@ const ProductDisplay = (props) => {
           <div className="produc-display-right-price-old">
             ${product.old_price}
           </div>
-          <div className="produc-display-right-price-discount">-40%</div>
+          <div className="produc-display-right-price-discount">
+            -{calculateDiscount()}%
+          </div>
         </div>
         <div className="product-display-right-description">
           {" "}
