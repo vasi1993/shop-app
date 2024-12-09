@@ -86,17 +86,17 @@ const NavBar = () => {
               {dropdownOpen && (
                 <ul className="dropdown-menu">
                   <li>
-                    <Link to="/womens" onClick={linkNavigation}>
+                    <Link to="/women" onClick={linkNavigation}>
                       <p>Womens</p>
                     </Link>
                   </li>
                   <li>
-                    <Link to="/mens" onClick={linkNavigation}>
+                    <Link to="/men" onClick={linkNavigation}>
                       <p>Mens</p>
                     </Link>
                   </li>
                   <li>
-                    <Link to="/kids" onClick={linkNavigation}>
+                    <Link to="/kid" onClick={linkNavigation}>
                       <p>Kids</p>
                     </Link>
                   </li>

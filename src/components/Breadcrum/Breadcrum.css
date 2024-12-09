@@ -1,0 +1,28 @@
+.breadcrum{
+    display: flex;
+    gap: 5px;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.breadcrum-home{
+    font-weight: 300;
+}
+
+.breadcrum-category{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+   font-weight: 300;
+}
+
+.breadcrum-product{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    font-weight: 300;
+}
+

@@ -1,6 +1,10 @@
+.shop-category-container{
+    padding: 10rem 5rem 10rem 5rem;
+}
+
 .shop-category{
     
-    padding: 10rem 5rem 10rem 5rem;
+   
     display: flex;
     flex-direction: row;
     justify-content: space-around;
