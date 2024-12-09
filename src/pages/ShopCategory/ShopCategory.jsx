@@ -5,8 +5,7 @@ import Card from "../../components/Card/Card";
 import ShopCategoryFilter from "../../components/ShopCategoryFilter/ShopCategoryFilter";
 import { IoIosArrowDropdown } from "react-icons/io";
 import { LuListFilter } from "react-icons/lu";
-import Bredcrum from "../../components/Breadcrum/Bredcrum";
-import { useParams } from "react-router-dom";
+
 const ShopCategory = (props) => {
   const { all_product } = useContext(ShopContext);
   const [dropfilter, setDropfilter] = useState(false);
