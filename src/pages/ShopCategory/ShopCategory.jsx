@@ -33,7 +33,6 @@ const ShopCategory = (props) => {
 
   return (
     <div className="shop-category-container">
-      {/* <Bredcrum product={product} /> */}
       <div className="shop-category">
         <div className="shop-category-left">
           {filterModal && (

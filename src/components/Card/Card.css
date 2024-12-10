@@ -60,6 +60,29 @@ border-radius: 30px;
     font-weight: 600;
 }
 
+@media(max-width:991px) {
+    .card{
+        width: 200px;    
+        }
+
+        .card-image{
+            max-width: 200px;
+            width: 200px;
+            }
+    
+}
+
+@media(max-width:842px){
+    .card{
+        width: 180px;    
+        }
+
+        .card-image{
+            max-width: 180px;
+            width: 180px;
+            }
+}
+
 @media(max-width:650px) {
     .card{
     width: 120px;    
