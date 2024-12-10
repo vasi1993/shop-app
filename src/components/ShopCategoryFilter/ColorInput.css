@@ -16,6 +16,14 @@
    border: 1px solid black;
 }
 
+@media(max-width:950px) {
+    .checkbox-round {
+        width: 25px;
+        height: 25px;
+    }
+
+}
+
 @media(max-width:650px) {
     .checkbox-round {
         width: 20px;

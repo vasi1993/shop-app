@@ -25,7 +25,7 @@ const Bredcrum = ({ product }) => {
       </div>
       <div className=" breadcrum-product">
         <IoIosArrowForward className="breadcrum-icon" />
-        {product.name}
+        {product.name.split(" ").slice(0, 3).join(" ")}
       </div>
     </div>
   );

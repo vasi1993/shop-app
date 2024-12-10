@@ -22,6 +22,16 @@
     background-color: black;
 }
 
+@media(max-width:950px){
+    .size-input-button{ 
+        font-size: 0.7rem;
+    }
+
+    .size-input-activebutton{
+        font-size: 0.7rem;
+    }
+}
+
 @media(max-width:650px) {
 
     

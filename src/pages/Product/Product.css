@@ -1,3 +1,9 @@
 .product{
     padding: 8rem 5rem 10rem 5rem;
 }
+
+@media(max-width:800px) {
+    .product{
+        padding: 8rem 2rem 10rem 2rem;
+    }
+}

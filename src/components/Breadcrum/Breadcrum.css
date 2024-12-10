@@ -26,3 +26,24 @@
     font-weight: 300;
 }
 
+@media(max-width:950px) {
+    .breadcrum{
+        gap: 3px;
+    }
+    
+    .breadcrum-home{
+        font-weight: 300;
+        font-size: 0.8rem;
+    }
+    
+    .breadcrum-category{
+        gap: 3px;
+       font-size: 0.8rem;
+    }
+    
+    .breadcrum-product{
+        gap: 3px;
+        font-size: 0.8rem;
+    }
+}
+

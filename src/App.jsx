@@ -10,11 +10,13 @@ import Footer from "./components/Footer/Footer";
 import ShopCategory from "./pages/ShopCategory/ShopCategory";
 import Product from "./pages/Product/Product";
 import { ShopContext } from "./Context/ShopContext";
+import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 
 function App() {
   return (
     <div className="app">
       <NavBar />
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/women" element={<ShopCategory category="women" />} />
