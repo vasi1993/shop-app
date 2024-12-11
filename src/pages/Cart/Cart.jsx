@@ -15,24 +15,30 @@ const Cart = () => {
           {all_product.map((item, index) => {
             if (cartItems[item.id] > 0) {
               return (
-                <div className="cart-items-card">
-                  <div className="cart-items-img">
-                    <img src={item.image} alt="" />
-                  </div>
-                  <div className="cart-items-desc">
-                    <h1>{item.name}</h1>
-                    <p className="size">Size:</p>
-                    <p className="color">Color:</p>
-                    <p className="price">${item.new_price}</p>
-                  </div>
-                  <div className="cart-items-button">
-                    <div className="remove">
-                      <p onClick={() => removeFromCart(item.id)}>
-                        <HiOutlineTrash />
-                      </p>
+                <div className="cart-items-card-container">
+                  <div className="cart-items-card">
+                    <div className="cart-items-img">
+                      <img src={item.image} alt="" />
                     </div>
-                    <div className="add">+</div>
+                    <div className="cart-items-desc">
+                      <p className="title-cart">
+                        {item.name.split(" ").slice(0, 3).join(" ")}
+                      </p>
+                      <p className="size-cart">Size:</p>
+                      <p className="color-cart">Color:</p>
+                      <p className="price-cart">${item.new_price}</p>
+                    </div>
+                    <div className="cart-items-button">
+                      <div
+                        className="remove-cart"
+                        onClick={() => removeFromCart(item.id)}
+                      >
+                        <HiOutlineTrash className="remove-cart-icon" />
+                      </div>
+                      <div className="add-cart">+</div>
+                    </div>
                   </div>
+                  {cartItems > 1 ? <></> : <hr className="cart-items-hr" />}
                 </div>
               );
             }
