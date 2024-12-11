@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./ProductDisplay.css";
 import { FaStar } from "react-icons/fa6";
 import ColorInput from "../ShopCategoryFilter/ColorInput";
 import SizeInput from "../ShopCategoryFilter/SizeInput";
+import { ShopContext } from "../../Context/ShopContext";
 
 const COLOR = [
   "green",
@@ -30,6 +31,8 @@ const SIZE = [
 
 const ProductDisplay = (props) => {
   const { product } = props;
+
+  const { cartItems, addToCart } = useContext(ShopContext);
 
   const calculateDiscount = () => {
     const discount =
@@ -93,8 +96,8 @@ const ProductDisplay = (props) => {
           </div>
         </div>
         <hr className="product-hr" />
-        <div className="product-display-right-addtocart header-button">
-          <button>Add to Cart</button>
+        <div className="product-display-right-addtocart">
+          <button onClick={() => addToCart(product.id)}>Add to Cart</button>
         </div>
       </div>
     </div>
