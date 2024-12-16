@@ -3,6 +3,8 @@ import "./Cart.css";
 import { ShopContext } from "../../Context/ShopContext";
 import { HiOutlineTrash } from "react-icons/hi2";
 import { IoIosAdd, IoIosRemove } from "react-icons/io";
+import { FaLongArrowAltRight } from "react-icons/fa";
+import { IoTicketOutline } from "react-icons/io5";
 
 const Cart = () => {
   const {
@@ -67,14 +69,34 @@ const Cart = () => {
         </div>
         <div className="cart-order">
           <h1>Order Summary</h1>
-          <p className="subtotal">Subtotal: ${getTotalCartAmount()}</p>
-          <p className="delivery">
-            Delivery: ${getTotalCartAmount() === 0 ? 0 : 2}
-          </p>
-          <hr />
-          <p className="total">
-            Total: ${getTotalCartAmount() === 0 ? 0 : getTotalCartAmount() + 2}
-          </p>
+          <div className="subtotal">
+            <span>Subtotal</span>
+            <span>${getTotalCartAmount()}</span>{" "}
+          </div>
+          <div className="delivery">
+            <span>Delivery</span>{" "}
+            <span> ${getTotalCartAmount() === 0 ? 0 : 2}</span>
+          </div>
+          <hr className="cart-order-hr" />
+          <div className="total">
+            <span>Total</span>
+            <span>
+              ${getTotalCartAmount() === 0 ? 0 : getTotalCartAmount() + 2}
+            </span>
+          </div>
+          <div className="cart-order-cupon">
+            <div className="cuppon-ticket">
+              <IoTicketOutline className="ticket" />
+              <input type="text" placeholder="Add promo code" />
+            </div>
+            <button className="cuppon-button">Apply</button>
+          </div>
+          <div className="cart-order-button">
+            <button>
+              Go to Checkbox{" "}
+              <FaLongArrowAltRight className="cart-order-button-icon" />
+            </button>
+          </div>
         </div>
       </div>
     </div>

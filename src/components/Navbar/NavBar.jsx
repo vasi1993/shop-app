@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import "./NavBar.css";
 import { CiSearch } from "react-icons/ci";
 import { BsCart3 } from "react-icons/bs";
@@ -9,12 +9,15 @@ import { AiOutlineMenuFold } from "react-icons/ai";
 import { AiOutlineMenuUnfold } from "react-icons/ai";
 import OutsideClickHandler from "react-outside-click-handler";
 import { IoIosArrowForward, IoIosArrowDown } from "react-icons/io";
+import { ShopContext } from "../../Context/ShopContext";
 const NavBar = () => {
   const [menu, setMenu] = useState("shop");
   const [menuOpen, setMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const navRef = useRef();
   const navigate = useNavigate();
+
+  const { getTotalCartAmount } = useContext(ShopContext);
 
   const toggleDropdown = () => {
     setMenu("shop");
@@ -139,9 +142,12 @@ const NavBar = () => {
           <CiSearch className="nav-icon" />
           <input type="text" placeholder="Search for product..." />
         </div>
-        <Link to="/cart">
-          <BsCart3 className="nav-icon" />
-        </Link>
+        <div className="nav-right-cart">
+          <Link to="/cart">
+            <BsCart3 className="nav-icon" />
+            <div className={getTotalCartAmount() === 0 ? " " : "dot"}></div>
+          </Link>
+        </div>
         <Link to="/user">
           <CgProfile className="nav-icon" />
         </Link>
