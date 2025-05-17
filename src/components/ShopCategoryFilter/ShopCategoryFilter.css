@@ -8,6 +8,7 @@
     border-radius: 20px;
     padding: 1rem 2rem;
     width: 250px;
+    z-index: 1000; /* sau orice mai mare decât 1 */
     
 }
 
@@ -247,12 +248,14 @@ width: 100%;
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
-        gap: 1rem;
         border: 1px solid black;
         border-radius: 20px;
         padding: 1rem 2rem;
-        width: 500px;
         background: white;
+        position: relative;
+        gap: 0.7rem;
+       
+        width: 350px;
       
     }
 }

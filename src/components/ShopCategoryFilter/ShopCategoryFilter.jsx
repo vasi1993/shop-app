@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import "./ShopCategoryFilter.css";
 import { LuListFilter } from "react-icons/lu";
 import {
@@ -10,6 +10,7 @@ import { AiOutlineFullscreenExit } from "react-icons/ai";
 import RangeSlider from "./RangeSlider";
 import ColorInput from "./ColorInput";
 import SizeInput from "./SizeInput";
+import { ShopContext } from "../../Context/ShopContext";
 
 const COLOR = [
   "green",
@@ -35,31 +36,35 @@ const SIZE = [
   "3x-Large",
 ];
 
-const ShopCategoryFilter = ({
-  setFilterModal,
-  setDropfilter,
-  dropfilter,
-  toggleSubCategory,
-  toggleColor,
-  colorCat,
-  sizeCat,
-  toggleSize,
-  priceRange,
-  setPriceRange,
-}) => {
-  const [pricedrop, setPriceDrop] = useState(false);
-  const [colorDrop, setColorDrop] = useState(false);
-  const [sizeDrop, setSizeDrop] = useState(false);
-  const [styleDrop, setStyleDrop] = useState(false);
+const SUBCATEGORIES = ["T-shirts", "Shorts", "Shirts", "Hoodie", "Jeans"];
 
-  const toogleFilter = () => {
-    setDropfilter(!dropfilter);
-  };
+const ShopCategoryFilter = () => {
+  const {
+    setFilterModal,
+    dropfilter,
+    toggleSubCategory,
+    toggleColor,
+    colorCat,
+    sizeCat,
+    toggleSize,
+    priceRange,
+    setPriceRange,
+    pricedrop,
+    setPriceDrop,
+    colorDrop,
+    setColorDrop,
+    sizeDrop,
+    setSizeDrop,
+    styleDrop,
+    setStyleDrop,
+    toggleFilter,
+  } = useContext(ShopContext);
+
   return (
     <div className="filter">
       <div className="filter-header">
         <h1>Filters</h1>
-        <div className="filter-icon-header filter-arrow" onClick={toogleFilter}>
+        <div className="filter-icon-header filter-arrow" onClick={toggleFilter}>
           {dropfilter ? <AiOutlineFullscreenExit /> : <LuListFilter />}
         </div>
         <div
@@ -74,66 +79,20 @@ const ShopCategoryFilter = ({
       {dropfilter ? (
         <div className="filter-container">
           <div className="filter-subcategory ">
-            <div className="row">
-              <p>T-shirts</p>
-              <label className="custom-checkbox">
-                <input
-                  type="checkbox"
-                  onChange={toggleSubCategory}
-                  value={"T-shirts"}
-                  className="filter-checkbox"
-                />
-                <span className="checkmark"></span>
-              </label>
-            </div>
-            <div className="row">
-              <p>Shorts</p>
-              <label className="custom-checkbox">
-                <input
-                  type="checkbox"
-                  onChange={toggleSubCategory}
-                  value={"Shorts"}
-                  className="filter-checkbox"
-                />
-                <span className="checkmark"></span>
-              </label>
-            </div>
-            <div className="row">
-              <p>Shirts</p>
-              <label className="custom-checkbox">
-                <input
-                  type="checkbox"
-                  onChange={toggleSubCategory}
-                  value={"Shirts"}
-                  className="filter-checkbox"
-                />
-                <span className="checkmark"></span>
-              </label>
-            </div>
-            <div className="row">
-              <p>Hoodie</p>
-              <label className="custom-checkbox">
-                <input
-                  type="checkbox"
-                  onChange={toggleSubCategory}
-                  value={"Hoodie"}
-                  className="filter-checkbox"
-                />
-                <span className="checkmark"></span>
-              </label>
-            </div>
-            <div className="row">
-              <p>Jeans</p>
-              <label className="custom-checkbox">
-                <input
-                  type="checkbox"
-                  onChange={toggleSubCategory}
-                  value={"Jeans"}
-                  className="filter-checkbox"
-                />
-                <span className="checkmark"></span>
-              </label>
-            </div>
+            {SUBCATEGORIES.map((sub, idx) => (
+              <div className="row" key={idx}>
+                <p>{sub}</p>
+                <label className="custom-checkbox">
+                  <input
+                    type="checkbox"
+                    onChange={toggleSubCategory}
+                    value={sub}
+                    className="filter-checkbox"
+                  />
+                  <span className="checkmark"></span>
+                </label>
+              </div>
+            ))}
           </div>
 
           <hr />
@@ -148,9 +107,7 @@ const ShopCategoryFilter = ({
                 {pricedrop ? <MdKeyboardArrowUp /> : <MdKeyboardArrowDown />}
               </div>
             </div>
-            {pricedrop ? (
-              <></>
-            ) : (
+            {!pricedrop && (
               <div className="filter-price-select">
                 <RangeSlider values={priceRange} onChange={setPriceRange} />
               </div>
@@ -169,9 +126,7 @@ const ShopCategoryFilter = ({
                 {colorDrop ? <MdKeyboardArrowUp /> : <MdKeyboardArrowDown />}
               </div>
             </div>
-            {colorDrop ? (
-              <></>
-            ) : (
+            {!colorDrop && (
               <div className="filter-color-select">
                 {COLOR.map((item, i) => {
                   return (
@@ -199,9 +154,7 @@ const ShopCategoryFilter = ({
                 {sizeDrop ? <MdKeyboardArrowUp /> : <MdKeyboardArrowDown />}
               </div>
             </div>
-            {sizeDrop ? (
-              <></>
-            ) : (
+            {!sizeDrop && (
               <div className="filter-size-select">
                 {SIZE.map((item, i) => {
                   return (
@@ -253,7 +206,13 @@ const ShopCategoryFilter = ({
             )}
           </div>
 
-          <button onClick={toogleFilter} className="filter-button">
+          <button
+            onClick={() => {
+              toggleFilter();
+              if (window.innerWidth < 1000) setFilterModal(false);
+            }}
+            className="filter-button"
+          >
             Apply Filter
           </button>
         </div>

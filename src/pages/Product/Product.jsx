@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import "./Product.css";
 
 import ProductDisplay from "../../components/ProductDisplay/ProductDisplay";
-import Bredcrum from "../../components/Breadcrum/Bredcrum";
+import Bredcrumd from "../../components/Breadcrumd/Bredcrumd";
 import { ShopContext } from "../../Context/ShopContext";
 import { useParams } from "react-router-dom";
 
@@ -13,7 +13,7 @@ const Product = () => {
 
   return (
     <div className="product">
-      <Bredcrum product={product} />
+      <Bredcrumd product={product} />
       <ProductDisplay product={product} />
     </div>
   );

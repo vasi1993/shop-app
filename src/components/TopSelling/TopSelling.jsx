@@ -5,7 +5,7 @@ import top_selling from "../../assets/topselling";
 import { Link } from "react-router-dom";
 const TopSelling = () => {
   return (
-    <div id="sale" className="top-selling">
+    <div id="sale" className="top-selling" aria-label="Top selling products">
       <h1>TOP SELLING</h1>
       <div className="top-selling-cards">
         {top_selling.map((item, idx) => {

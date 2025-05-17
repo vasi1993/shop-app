@@ -13,7 +13,7 @@ import payImg from "../../assets/pay-u.svg";
 
 const Footer = () => {
   return (
-    <div className="footer">
+    <footer className="footer">
       <Newsletter />
       <div className="footer-container">
         <div className="footer-social">
@@ -30,14 +30,29 @@ const Footer = () => {
             </p>
           </div>
           <div className="footer-icons">
-            <a href="#">
-              <img src={navIcon1} alt="facebook " />
+            <a
+              href="https://linkedln.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Visit our Linkedln page"
+            >
+              <img src={navIcon1} alt="Linedln icon " />
             </a>
-            <a href="#">
-              <img src={navIcon2} alt="" />
+            <a
+              href="https://facebook.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Visit our Facebook page"
+            >
+              <img src={navIcon2} alt="Facebook icon" />
             </a>
-            <a href="#">
-              <img src={navIcon3} alt="" />
+            <a
+              href="https://instagram.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Visit our Instagram page"
+            >
+              <img src={navIcon3} alt="Instagram icon" />
             </a>
           </div>
         </div>
@@ -80,7 +95,7 @@ const Footer = () => {
         <div className="details">
           <p>@vasy, All rights Reserved</p>
         </div>
-        <div className="payment">
+        <div className="payment" aria-label="Accepted payment methods">
           <img src={visaImg} alt="visa" />
           <img src={mastercardImg} alt="mastercard" />
           <img src={appleImg} alt="apple" />
@@ -88,7 +103,7 @@ const Footer = () => {
           <img src={payImg} alt="pay" />
         </div>
       </div>
-    </div>
+    </footer>
   );
 };
 

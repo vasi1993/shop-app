@@ -7,7 +7,11 @@ const Card = ({ id, image, name, stars_number, new_price }) => {
     <div className="card">
       <div className="card-items">
         <Link to={`/product/${id}`}>
-          <img src={image} alt="card" className="card-image" />
+          <img
+            src={image || "/default.jpg"}
+            alt={name || "Product"}
+            className="card-image"
+          />
         </Link>
         <p className="card-title">{name}</p>
         <div className="stars">
@@ -21,7 +25,7 @@ const Card = ({ id, image, name, stars_number, new_price }) => {
         </div>
         <div className="card-price">
           <span>$</span>
-          <span>{new_price}</span>
+          <span>{Number(new_price).toFixed(2)}</span>
         </div>
       </div>
     </div>

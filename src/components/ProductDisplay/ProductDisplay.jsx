@@ -25,7 +25,7 @@ const ProductDisplay = (props) => {
           <img src={product.image} alt="product-image" />
         </div>
         <div className="product-display-img">
-          <img src={product.image} alt="" />
+          <img src={product.image} alt={`Image of ${product.name}`} />
         </div>
       </div>
       <div className="product-display-right">
@@ -61,9 +61,10 @@ const ProductDisplay = (props) => {
               return (
                 <label key={index} className="color-input">
                   <input
-                    type="checkbox"
-                    checked={false}
-                    onChange={() => setCheckedColor(item) && checked(true)}
+                    aria-label={`Select color ${item}`}
+                    type="radio"
+                    checked={item === checkedColor}
+                    onChange={() => setCheckedColor(item)}
                     className={
                       item === checkedColor
                         ? "checkbox-round active"
@@ -99,9 +100,19 @@ const ProductDisplay = (props) => {
         <hr className="product-hr" />
         <div className="product-display-right-addtocart">
           <button
-            onClick={() =>
-              addToCart(product.id, sizeActive, checkedColor, product.new_price)
-            }
+            onClick={() => {
+              if (!sizeActive || !checkedColor) {
+                alert("Please select size and color");
+                return;
+              }
+              addToCart(
+                product.id,
+                sizeActive,
+                checkedColor,
+                product.new_price
+              );
+            }}
+            aria-label={`Add ${product.name} in size ${sizeActive} and color ${checkedColor} to cart`}
           >
             Add to Cart
           </button>

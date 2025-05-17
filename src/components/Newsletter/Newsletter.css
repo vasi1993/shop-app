@@ -1,6 +1,7 @@
 .newsletter{
    position: absolute;
  top: -6rem;
+ z-index: 1;
 }
 
 .newsletter-container{

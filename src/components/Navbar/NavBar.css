@@ -64,14 +64,20 @@
     border-radius: 20px;
     display: flex;
     align-items: center;
+    justify-content: center;
     padding: 5px;  
-    width: 100%;
+    width: 180px;
+    gap: 10px;
 }
 
 .nav-right-search input{
     border: none;
     outline: none;
     background-color: transparent;
+    width: 60%;
+    height: 100%;
+    font-size: 1rem;
+    font-weight: 300;
 }
 
 .nav-right-search input::placeholder{
@@ -186,9 +192,11 @@ gap: 7px;
         padding: 3rem;
         align-items: center;
         font-size: 2rem;
-        transition: all 300ms ease-in;
+       
         width: 100%;
         height: 1000vh;
+        left: -100%;
+  transition: left 0.3s ease-in-out;
     }
 
     .nav-bar{   
@@ -197,13 +205,13 @@ gap: 7px;
     }
 
     .nav-right-search input{
-        display: none;
+       width: 70%;
     }
     .nav-right-search{
-        background: transparent;
-        width: 50px;
-        height: 100%;
-        justify-content: flex-end;
+      
+        width: 180px;
+        
+        justify-content: flex-start;
         align-items: center;
     }
 
@@ -278,6 +286,18 @@ gap: 7px;
     .mobile-menu{    
         top: 5rem;     
     }
+
+    .nav-right-search input{
+        width: 60%;
+        font-size: 0.8rem;
+     }
+     .nav-right-search{
+       
+         width: 110px;
+         gap: 5px;
+         justify-content: flex-start;
+         align-items: center;
+     }
 }
 
 @media (max-width:550px){

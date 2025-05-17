@@ -4,7 +4,7 @@ import { CiSearch } from "react-icons/ci";
 import { BsCart3 } from "react-icons/bs";
 import { CgProfile } from "react-icons/cg";
 import logo from "../../assets/logo_shop.png";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { AiOutlineMenuFold } from "react-icons/ai";
 import { AiOutlineMenuUnfold } from "react-icons/ai";
 import OutsideClickHandler from "react-outside-click-handler";
@@ -14,10 +14,12 @@ const NavBar = () => {
   const [menu, setMenu] = useState("shop");
   const [menuOpen, setMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [visible, setVisible] = useState(false);
   const navRef = useRef();
-  const navigate = useNavigate();
+  const location = useLocation();
 
-  const { getTotalCartAmount } = useContext(ShopContext);
+  const { getTotalCartAmount, navigate, search, setSearch } =
+    useContext(ShopContext);
 
   const toggleDropdown = () => {
     setMenu("shop");
@@ -30,19 +32,31 @@ const NavBar = () => {
   };
 
   const getMenuStyles = (menuOpen) => {
-    if (document.documentElement.clientWidth <= 1000) {
-      return { left: !menuOpen && "-1000%" };
+    if (window.innerWidth <= 1100) {
+      return { left: menuOpen ? "0" : "-100%" };
     }
+    return {};
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", () => {
+    const visiblePaths = ["shop", "women", "men", "kid"];
+    const shouldShow = visiblePaths.some((path) =>
+      location.pathname.includes(path)
+    );
+    setVisible(shouldShow);
+  }, [location]);
+
+  useEffect(() => {
+    const handleScroll = () => {
       if (window.scrollY >= 80) {
         navRef.current.classList.add("nav-dark");
       } else {
         navRef.current.classList.remove("nav-dark");
       }
-    });
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll); // cleanup!
   }, []);
 
   return (
@@ -138,10 +152,18 @@ const NavBar = () => {
         </div>
       </OutsideClickHandler>
       <div className="nav-right">
-        <div className="nav-right-search">
-          <CiSearch className="nav-icon" />
-          <input type="text" placeholder="Search for product..." />
-        </div>
+        {visible ? (
+          <div className="nav-right-search">
+            <CiSearch className="nav-icon" />
+            <input
+              type="text"
+              placeholder="Search..."
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+            />
+          </div>
+        ) : null}
+
         <div className="nav-right-cart">
           <Link to="/cart">
             <BsCart3 className="nav-icon" />

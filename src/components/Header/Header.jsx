@@ -6,16 +6,16 @@ import headerImg from "../../assets/header_img.jpg";
 import { Link } from "react-router-dom";
 const Header = () => {
   return (
-    <div className="header" id="home">
+    <header className="header" id="home">
       <div className="header-left">
         <div className="header-title">
           <h1>
-            FIND CLOTHEST <br /> THAT MATCHES <br /> YOUR STYLE
+            FIND CLOTHES <br /> THAT MATCH <br /> YOUR STYLE
           </h1>
         </div>
         <div className="header-desc">
           <p>
-            Browse throught our diverse range of meticulosly crafted garments,
+            Browse through our diverse range of meticulously crafted garments,
             designed <br /> to bring out your individuality and cater to your
             sense of style
           </p>
@@ -53,10 +53,10 @@ const Header = () => {
 
       <div className="header-right">
         <div className="header-right-image">
-          <img src={headerImg} alt="Header-image" />
+          <img src={headerImg} alt="Fashionable clothing model" />
         </div>
       </div>
-    </div>
+    </header>
   );
 };
 
