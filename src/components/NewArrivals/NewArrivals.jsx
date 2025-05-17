@@ -3,6 +3,7 @@ import "./NewArrivals.css";
 
 import new_arrivals from "../../assets/newarrivals";
 import Card from "../Card/Card";
+import { Link } from "react-router-dom";
 const NewArrivals = () => {
   return (
     <div className="new-arrivals" id="new">
@@ -21,7 +22,10 @@ const NewArrivals = () => {
           );
         })}
       </div>
-      <button className="button">View All</button>
+      <Link to="/shop">
+        <button className="button">View All</button>
+      </Link>
+
       <hr />
     </div>
   );

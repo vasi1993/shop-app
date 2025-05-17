@@ -2,6 +2,8 @@ import React from "react";
 import "./Header.css";
 import CountUp from "react-countup";
 import headerImg from "../../assets/header_img.jpg";
+
+import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <div className="header" id="home">
@@ -19,7 +21,9 @@ const Header = () => {
           </p>
         </div>
         <div className="header-button">
-          <button>Shop Now</button>
+          <Link to="/shop">
+            <button>Shop Now</button>
+          </Link>
         </div>
         <div className="header-stats">
           <div className="header-stat">

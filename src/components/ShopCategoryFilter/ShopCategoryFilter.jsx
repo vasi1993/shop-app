@@ -35,7 +35,18 @@ const SIZE = [
   "3x-Large",
 ];
 
-const ShopCategoryFilter = ({ setFilterModal, setDropfilter, dropfilter }) => {
+const ShopCategoryFilter = ({
+  setFilterModal,
+  setDropfilter,
+  dropfilter,
+  toggleSubCategory,
+  toggleColor,
+  colorCat,
+  sizeCat,
+  toggleSize,
+  priceRange,
+  setPriceRange,
+}) => {
   const [pricedrop, setPriceDrop] = useState(false);
   const [colorDrop, setColorDrop] = useState(false);
   const [sizeDrop, setSizeDrop] = useState(false);
@@ -62,26 +73,66 @@ const ShopCategoryFilter = ({ setFilterModal, setDropfilter, dropfilter }) => {
       <hr />
       {dropfilter ? (
         <div className="filter-container">
-          <div className="filter-category ">
+          <div className="filter-subcategory ">
             <div className="row">
               <p>T-shirts</p>
-              <MdKeyboardArrowRight className="filter-arrow" />
+              <label className="custom-checkbox">
+                <input
+                  type="checkbox"
+                  onChange={toggleSubCategory}
+                  value={"T-shirts"}
+                  className="filter-checkbox"
+                />
+                <span className="checkmark"></span>
+              </label>
             </div>
             <div className="row">
               <p>Shorts</p>
-              <MdKeyboardArrowRight className="filter-arrow" />
+              <label className="custom-checkbox">
+                <input
+                  type="checkbox"
+                  onChange={toggleSubCategory}
+                  value={"Shorts"}
+                  className="filter-checkbox"
+                />
+                <span className="checkmark"></span>
+              </label>
             </div>
             <div className="row">
               <p>Shirts</p>
-              <MdKeyboardArrowRight className="filter-arrow" />
+              <label className="custom-checkbox">
+                <input
+                  type="checkbox"
+                  onChange={toggleSubCategory}
+                  value={"Shirts"}
+                  className="filter-checkbox"
+                />
+                <span className="checkmark"></span>
+              </label>
             </div>
             <div className="row">
               <p>Hoodie</p>
-              <MdKeyboardArrowRight className="filter-arrow" />
+              <label className="custom-checkbox">
+                <input
+                  type="checkbox"
+                  onChange={toggleSubCategory}
+                  value={"Hoodie"}
+                  className="filter-checkbox"
+                />
+                <span className="checkmark"></span>
+              </label>
             </div>
             <div className="row">
               <p>Jeans</p>
-              <MdKeyboardArrowRight className="filter-arrow" />
+              <label className="custom-checkbox">
+                <input
+                  type="checkbox"
+                  onChange={toggleSubCategory}
+                  value={"Jeans"}
+                  className="filter-checkbox"
+                />
+                <span className="checkmark"></span>
+              </label>
             </div>
           </div>
 
@@ -101,7 +152,7 @@ const ShopCategoryFilter = ({ setFilterModal, setDropfilter, dropfilter }) => {
               <></>
             ) : (
               <div className="filter-price-select">
-                <RangeSlider />
+                <RangeSlider values={priceRange} onChange={setPriceRange} />
               </div>
             )}
           </div>
@@ -122,8 +173,15 @@ const ShopCategoryFilter = ({ setFilterModal, setDropfilter, dropfilter }) => {
               <></>
             ) : (
               <div className="filter-color-select">
-                {COLOR.map((item) => {
-                  return <ColorInput backgroundColor={item} />;
+                {COLOR.map((item, i) => {
+                  return (
+                    <ColorInput
+                      key={i}
+                      item={item}
+                      colorCat={colorCat}
+                      toggleColor={toggleColor}
+                    />
+                  );
                 })}
               </div>
             )}
@@ -145,8 +203,15 @@ const ShopCategoryFilter = ({ setFilterModal, setDropfilter, dropfilter }) => {
               <></>
             ) : (
               <div className="filter-size-select">
-                {SIZE.map((item) => {
-                  return <SizeInput size={item} />;
+                {SIZE.map((item, i) => {
+                  return (
+                    <SizeInput
+                      key={i}
+                      size={item}
+                      toggleSize={toggleSize}
+                      sizeCat={sizeCat}
+                    />
+                  );
                 })}
               </div>
             )}
@@ -188,7 +253,9 @@ const ShopCategoryFilter = ({ setFilterModal, setDropfilter, dropfilter }) => {
             )}
           </div>
 
-          <button className="filter-button">Apply Filter</button>
+          <button onClick={toogleFilter} className="filter-button">
+            Apply Filter
+          </button>
         </div>
       ) : (
         <></>

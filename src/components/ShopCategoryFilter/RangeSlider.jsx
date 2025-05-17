@@ -1,12 +1,13 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./RangeSlider.css";
 import Slider from "react-slider";
 
 const MIN = 0;
 const MAX = 500;
 
-const RangeSlider = () => {
-  const [values, setValues] = useState([MIN, MAX]);
+const RangeSlider = ({ values, onChange }) => {
+  // const [values, setValues] = useState([MIN, MAX]);
+
   return (
     <div className="range-slider">
       <div className={"value"}>
@@ -16,7 +17,7 @@ const RangeSlider = () => {
 
       <Slider
         className={"slider"}
-        onChange={setValues}
+        onChange={onChange}
         value={values}
         min={MIN}
         max={MAX}

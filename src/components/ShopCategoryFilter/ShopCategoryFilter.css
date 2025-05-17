@@ -39,7 +39,7 @@ width: 100%;
     gap: 1rem;
 }
 
-.filter-category{
+.filter-subcategory{
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -52,6 +52,74 @@ width: 100%;
     align-items: center;
     
 }
+
+/* css check-box */
+.custom-checkbox {
+    display: flex;
+    align-items: center;
+    font-size: 3px;
+    color: #333;
+    cursor: pointer;
+    position: relative;
+    padding-left: 20px;
+    user-select: none;
+    margin-bottom:15px;
+  }
+  
+  /* Ascundem checkbox-ul standard */
+  .custom-checkbox input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  /* Creăm checkbox-ul personalizat */
+  .custom-checkbox .checkmark {
+    position: absolute;
+    left: 0;
+    top: 1px;
+    height: 13px;
+    width: 13px;
+    background-color: #fff;
+    border: 2px solid #444;
+    border-radius: 3px;
+    transition: all 0.2s ease;
+  }
+  
+  /* Efect hover */
+  .custom-checkbox:hover .checkmark {
+    background-color: #f0f0f0;
+  }
+  
+  /* Când e bifat */
+  .custom-checkbox input:checked ~ .checkmark {
+    background-color: #333;
+    border-color: #333;
+  }
+  
+  /* Bifa (✓) */
+  .custom-checkbox .checkmark::after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 2px;
+    top: -1.5px;
+    width: 4px;
+    height: 8px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+  
+  /* Arată bifa dacă e selectat */
+  .custom-checkbox input:checked ~ .checkmark::after {
+    display: block;
+  }
+
+
+
 
 .filter-price{
     display: flex;

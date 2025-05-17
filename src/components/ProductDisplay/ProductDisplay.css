@@ -194,6 +194,50 @@ align-items: center;
     border-radius: 60px;
 }
 
+/* size section */
+.size-input{
+    display: flex;
+    flex-direction: row;
+  
+  
+}
+
+.size-input-button{ 
+    border-radius: 35%;
+    padding: 10px 10px;
+    border: none;
+    cursor: pointer;
+    color: gray;
+}
+
+.size-input-activebutton{
+    border-radius: 35%;
+    padding: 10px 10px;
+    border: none;
+    cursor: pointer;
+    color: white;
+    background-color: black;
+}
+
+/* color section */
+.checkbox-round {
+    width: 30px;
+    height: 30px;
+  
+    border-radius: 50%;
+    vertical-align: middle;
+    border: 2px solid #ddd;
+    appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.checkbox-round.active {
+   transform: scale(1.1);
+   border: 1px solid black;
+}
+
 @media(max-width:1150px){
 
     .product-display-right{
@@ -305,8 +349,22 @@ gap: 4px;
 
 }
 
+.size-input-button{ 
+    font-size: 0.7rem;
+}
+
+.size-input-activebutton{
+    font-size: 0.7rem;
+}
+
+.checkbox-round {
+    width: 25px;
+    height: 25px;
+}
+
 
 }
+
 
 @media(max-width:800px) {
     .product-display{
@@ -320,6 +378,25 @@ gap: 4px;
         width: 100%;
        
     }
+}
+
+
+@media(max-width:650px) {
+
+    
+    .size-input-button{ 
+        font-size: 0.6rem;
+    }
+
+    .size-input-activebutton{
+        font-size: 0.6rem;
+    }
+    
+    .checkbox-round {
+        width: 20px;
+        height: 20px;
+    }
+
 }
 
 @media(max-width:500px){

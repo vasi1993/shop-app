@@ -2,6 +2,7 @@ import React from "react";
 import "./TopSelling.css";
 import Card from "../Card/Card";
 import top_selling from "../../assets/topselling";
+import { Link } from "react-router-dom";
 const TopSelling = () => {
   return (
     <div id="sale" className="top-selling">
@@ -20,7 +21,9 @@ const TopSelling = () => {
           );
         })}
       </div>
-      <button className="button">View All</button>
+      <Link to="/shop">
+        <button className="button">View All</button>
+      </Link>
     </div>
   );
 };

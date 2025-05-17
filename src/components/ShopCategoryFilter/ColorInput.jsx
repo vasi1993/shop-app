@@ -1,16 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 import "./ColorInput.css";
-const ColorInput = ({ backgroundColor }) => {
-  const [checked, setChecked] = useState(false);
 
+const ColorInput = ({ item, toggleColor, colorCat }) => {
   return (
     <label className="color-input">
       <input
         type="checkbox"
-        checked={checked}
-        onChange={() => setChecked(!checked)}
+        value={item}
+        onChange={toggleColor}
+        checked={colorCat.includes(item)}
         className="checkbox-round"
-        style={{ backgroundColor: backgroundColor }}
+        style={{ backgroundColor: item }}
       />
       <span className="checkmark"></span>
     </label>

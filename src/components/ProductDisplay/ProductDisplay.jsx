@@ -1,36 +1,12 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import "./ProductDisplay.css";
 import { FaStar } from "react-icons/fa6";
-import ColorInput from "../ShopCategoryFilter/ColorInput";
-import SizeInput from "../ShopCategoryFilter/SizeInput";
 import { ShopContext } from "../../Context/ShopContext";
-
-const COLOR = [
-  "green",
-  "red",
-  "yellow",
-  "orange",
-  "pink",
-  "blue",
-  "purple",
-  "gray",
-  "white",
-  "black",
-];
-
-const SIZE = [
-  "XX-Small",
-  "X-Small",
-  "Small",
-  "Medium",
-  "Large",
-  "X-Large",
-  "XX-Large",
-  "3x-Large",
-];
 
 const ProductDisplay = (props) => {
   const { product } = props;
+  const [sizeActive, setSizeActive] = useState("");
+  const [checkedColor, setCheckedColor] = useState("");
 
   const { cartItems, addToCart } = useContext(ShopContext);
 
@@ -81,23 +57,54 @@ const ProductDisplay = (props) => {
         <div className="product-display-right-colors">
           <p>Select Colors</p>
           <div className="colors">
-            {COLOR.map((item) => {
-              return <ColorInput backgroundColor={item} />;
+            {product.color.map((item, index) => {
+              return (
+                <label key={index} className="color-input">
+                  <input
+                    type="checkbox"
+                    checked={false}
+                    onChange={() => setCheckedColor(item) && checked(true)}
+                    className={
+                      item === checkedColor
+                        ? "checkbox-round active"
+                        : "checkbox-round "
+                    }
+                    style={{ backgroundColor: item }}
+                  />
+                  <span className="checkmark"></span>
+                </label>
+              );
             })}
           </div>
         </div>
         <hr className="product-hr" />
         <div className="produc-display-right-size">
           <p>Choose Size</p>
-          <div className="size">
-            {SIZE.map((item) => {
-              return <SizeInput size={item} />;
-            })}
+          <div className="size size-input">
+            {product.sizes.map((item, index) => (
+              <button
+                key={index}
+                className={
+                  item === sizeActive
+                    ? "size-input-activebutton"
+                    : "size-input-button"
+                }
+                onClick={() => setSizeActive(item)}
+              >
+                {item}
+              </button>
+            ))}
           </div>
         </div>
         <hr className="product-hr" />
         <div className="product-display-right-addtocart">
-          <button onClick={() => addToCart(product.id)}>Add to Cart</button>
+          <button
+            onClick={() =>
+              addToCart(product.id, sizeActive, checkedColor, product.new_price)
+            }
+          >
+            Add to Cart
+          </button>
         </div>
       </div>
     </div>

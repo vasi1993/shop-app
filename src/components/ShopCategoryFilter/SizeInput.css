@@ -1,47 +1,74 @@
-.size-input{
-    display: flex;
-    flex-direction: row;
-  
-  
-}
-
-.size-input-button{ 
-    border-radius: 35%;
-    padding: 10px 10px;
-    border: none;
+.size-input {
+    display: inline-flex;
+    align-items: center;
+    
     cursor: pointer;
-    color: gray;
-}
+    user-select: none;
+    font-family: 'Arial', sans-serif;
+    font-size: 12px;
+  }
+  
+  .size-checkbox {
+    display: none;
+  }
+  
+  /* Stilul vizual al butonului de mărime */
+  .size-checkmark {
+    padding: 6px 4px;
+    border: 2px solid #000;
+    border-radius: 8px;
+    background-color: #fff;
+    color: #000;
+    transition: all 0.2s ease;
+    font-weight: 400;
+  }
+  
+  /* Când este selectat */
+  .size-checkbox:checked + .size-checkmark {
+    background-color: #000;
+    color: #fff;
+    border-color: #000;
+    font-weight: bold;
+    box-shadow: 0 0 0 2px #000 inset;
+  }
+  
+  /* Pe hover */
+  .size-input:hover .size-checkmark {
+    background-color: #f0f0f0;
+  }
 
-.size-input-activebutton{
-    border-radius: 35%;
-    padding: 10px 10px;
-    border: none;
-    cursor: pointer;
-    color: white;
-    background-color: black;
-}
+
 
 @media(max-width:950px){
-    .size-input-button{ 
-        font-size: 0.7rem;
-    }
-
-    .size-input-activebutton{
-        font-size: 0.7rem;
-    }
+  
 }
 
 @media(max-width:650px) {
-
+    .size-input {
+        display: inline-flex;
+        align-items: center;
+        
+        cursor: pointer;
+        user-select: none;
+        font-family: 'Arial', sans-serif;
+        font-size: 10px;
+      }
+      
+      .size-checkbox {
+        display: none;
+      }
+      
+      /* Stilul vizual al butonului de mărime */
+      .size-checkmark {
+        padding: 6px 4px;
+        border: 2px solid #000;
+        border-radius: 8px;
+        background-color: #fff;
+        color: #000;
+        transition: all 0.2s ease;
+        font-weight: 400;
+      }
     
-    .size-input-button{ 
-        font-size: 0.6rem;
-    }
-
-    .size-input-activebutton{
-        font-size: 0.6rem;
-    }
-    
+  
 
 }

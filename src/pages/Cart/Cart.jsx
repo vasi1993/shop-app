@@ -21,50 +21,60 @@ const Cart = () => {
       </div>
       <div className="cart-container">
         <div className="cart-items">
-          {all_product.map((item, index) => {
-            if (cartItems[item.id] > 0) {
-              return (
-                <div className="cart-items-card-container">
-                  <div className="cart-items-card">
-                    <div className="cart-items-img">
-                      <img src={item.image} alt="" />
+          {Object.entries(cartItems).map(([key, item]) => {
+            const product = all_product.find((p) => p.id === item.id);
+            return (
+              <div className="cart-items-card-container" key={key}>
+                <div className="cart-items-card">
+                  <div className="cart-items-img">
+                    <img src={product.image} alt={product.name} />
+                  </div>
+                  <div className="cart-items-desc">
+                    <p className="title-cart">
+                      {product.name.split(" ").slice(0, 3).join(" ")}
+                    </p>
+                    <p className="size-cart">Size: {item.size}</p>
+                    <p className="color-cart">Color: {item.color}</p>
+                    <p className="price-cart">${item.price}</p>
+                  </div>
+                  <div className="cart-items-button">
+                    <div
+                      className="remove-cart"
+                      onClick={() =>
+                        removeFromCart(item.id, item.size, item.color)
+                      }
+                    >
+                      <HiOutlineTrash className="remove-cart-icon" />
                     </div>
-                    <div className="cart-items-desc">
-                      <p className="title-cart">
-                        {item.name.split(" ").slice(0, 3).join(" ")}
-                      </p>
-                      <p className="size-cart">Size:</p>
-                      <p className="color-cart">Color:</p>
-                      <p className="price-cart">${item.new_price}</p>
-                    </div>
-                    <div className="cart-items-button">
-                      <div
-                        className="remove-cart"
-                        onClick={() => removeFromCart(item.id)}
-                      >
-                        <HiOutlineTrash className="remove-cart-icon" />
+                    <div className="add-cart">
+                      <div className="add-cart-remove">
+                        <IoIosRemove
+                          className="add-cart-remove-icon"
+                          onClick={() =>
+                            removeFromCart(item.id, item.size, item.color)
+                          }
+                        />
                       </div>
-                      <div className="add-cart">
-                        <div className="add-cart-remove">
-                          <IoIosRemove
-                            className="add-cart-remove-icon"
-                            onClick={() => removeFromCart(item.id)}
-                          />
-                        </div>
-                        <p>{cartItems[item.id]}</p>
-                        <div className="add-cart-add">
-                          <IoIosAdd
-                            className="add-cart-add-icon"
-                            onClick={() => addToCart(item.id)}
-                          />
-                        </div>
+                      <p>{item.quantity}</p>
+                      <div className="add-cart-add">
+                        <IoIosAdd
+                          className="add-cart-add-icon"
+                          onClick={() =>
+                            addToCart(
+                              item.id,
+                              item.size,
+                              item.color,
+                              item.price
+                            )
+                          }
+                        />
                       </div>
                     </div>
                   </div>
-                  {cartItems > 1 ? <></> : <hr className="cart-items-hr" />}
                 </div>
-              );
-            }
+                {cartItems > 1 ? <></> : <hr className="cart-items-hr" />}
+              </div>
+            );
           })}
         </div>
         <div className="cart-order">
