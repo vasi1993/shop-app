@@ -11,6 +11,7 @@ const ColorInput = ({ item, toggleColor, colorCat }) => {
         checked={colorCat.includes(item)}
         className="checkbox-round"
         style={{ backgroundColor: item }}
+        aria-label={`Select color ${item}`}
       />
       <span className="checkmark"></span>
     </label>

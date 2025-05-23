@@ -3,31 +3,51 @@ import "./Browseby.css";
 
 const Browseby = () => {
   return (
-    <div className="browse-by" id="brands">
+    <section className="browse-by" id="brands" aria-labelledby="browse-heading">
       <div className="browse-container">
         <div className="browse-title">
-          <h1>BROWSE BY DRESS STYLE</h1>
+          <h1 id="browse-heading">BROWSE BY DRESS STYLE</h1>
         </div>
-        <div className="browse-category">
+        <div className="browse-category" role="list">
           <div className="row1">
-            <div className="browse-casual">
+            <article
+              className="browse-casual"
+              role="listitem"
+              tabIndex="0"
+              aria-label="Casual style"
+            >
               <p>Casual</p>
-            </div>
-            <div className="browse-formal">
+            </article>
+            <article
+              className="browse-formal"
+              role="listitem"
+              tabIndex="0"
+              aria-label="Formal style"
+            >
               <p>Formal</p>
-            </div>
+            </article>
           </div>
           <div className="row2">
-            <div className="browse-party">
+            <article
+              className="browse-party "
+              role="listitem"
+              tabIndex="0"
+              aria-label="Party style"
+            >
               <p>Party</p>
-            </div>
-            <div className="browse-gym">
+            </article>
+            <article
+              className="browse-gym"
+              role="listitem"
+              tabIndex="0"
+              aria-label="Gym style"
+            >
               <p>Gym</p>
-            </div>
+            </article>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -7,19 +7,28 @@ import data from "../../assets/slider";
 import { FaStar } from "react-icons/fa6";
 const Review = () => {
   return (
-    <div className="review">
+    <section className="review" aria-labelledby="review-heading">
       <div className="review-container">
         <div className="review-title">
-          <h1>OUR HAPPY CUSTOMERS</h1>
+          <h1 id="review-heading">OUR HAPPY CUSTOMERS</h1>
         </div>
-        <div className="review-cards">
+        <div
+          className="review-cards"
+          role="region"
+          aria-label="Customer testimonials carousel"
+        >
           <Swiper {...sliderSettings}>
             <SliderButton />
             {data.map((card, i) => {
               return (
-                <SwiperSlide key={i}>
-                  <div className="review-card">
-                    <div className="review-stars">
+                <SwiperSlide
+                  key={i}
+                  role="group"
+                  aria-roledescription="slide"
+                  aria-label={`Testimonial from ${card.name}`}
+                >
+                  <article className="review-card">
+                    <div className="review-stars" aria-label="5 star rating">
                       <FaStar className="star" />
                       <FaStar className="star" />
                       <FaStar className="star" />
@@ -28,14 +37,14 @@ const Review = () => {
                     </div>
                     <div className="card-name">{card.name}</div>
                     <div className="card-desc">{card.review}</div>
-                  </div>
+                  </article>
                 </SwiperSlide>
               );
             })}
           </Swiper>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
@@ -44,9 +53,16 @@ export default Review;
 const SliderButton = () => {
   const swiper = useSwiper();
   return (
-    <div className="slider-buttons">
-      <button onClick={() => swiper.slidePrev()}>&lt;</button>
-      <button onClick={() => swiper.slideNext()}>&gt;</button>
+    <div className="slider-buttons" aria-label="Slide navigation controls">
+      <button
+        onClick={() => swiper.slidePrev()}
+        aria-label="Previous testimonial"
+      >
+        &lt;
+      </button>
+      <button onClick={() => swiper.slideNext()} aria-label="Next testimonial">
+        &gt;
+      </button>
     </div>
   );
 };

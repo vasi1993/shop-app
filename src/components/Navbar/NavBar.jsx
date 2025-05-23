@@ -60,7 +60,12 @@ const NavBar = () => {
   }, []);
 
   return (
-    <div ref={navRef} className="nav-bar">
+    <nav
+      ref={navRef}
+      className="nav-bar"
+      role="navigation"
+      aria-label="Main navigation"
+    >
       <OutsideClickHandler
         onOutsideClick={() => {
           setMenuOpen(false);
@@ -89,7 +94,9 @@ const NavBar = () => {
           <ul className="nav-link mobile-menu" style={getMenuStyles(menuOpen)}>
             <li className="dropdown" onClick={toggleDropdown}>
               <button
-                href="#shop"
+                aria-haspopup="true"
+                aria-expanded={dropdownOpen}
+                aria-controls="shop-dropdown"
                 className={
                   dropdownOpen && menu === "shop"
                     ? " toogle-dark active"
@@ -101,19 +108,31 @@ const NavBar = () => {
               </button>
 
               {dropdownOpen && (
-                <ul className="dropdown-menu">
+                <ul id="shop-dropdown" className="dropdown-menu">
                   <li>
-                    <Link to="/women" onClick={linkNavigation}>
+                    <Link
+                      to="/women"
+                      title="Shop Women's Clothing"
+                      onClick={linkNavigation}
+                    >
                       <p>Womens</p>
                     </Link>
                   </li>
                   <li>
-                    <Link to="/men" onClick={linkNavigation}>
+                    <Link
+                      to="/men"
+                      title="Shop Men's Clothing"
+                      onClick={linkNavigation}
+                    >
                       <p>Mens</p>
                     </Link>
                   </li>
                   <li>
-                    <Link to="/kid" onClick={linkNavigation}>
+                    <Link
+                      to="/kid"
+                      title="Shop Kids' Clothing"
+                      onClick={linkNavigation}
+                    >
                       <p>Kids</p>
                     </Link>
                   </li>
@@ -156,6 +175,7 @@ const NavBar = () => {
           <div className="nav-right-search">
             <CiSearch className="nav-icon" />
             <input
+              id="site-search"
               type="text"
               placeholder="Search..."
               value={search}
@@ -165,16 +185,16 @@ const NavBar = () => {
         ) : null}
 
         <div className="nav-right-cart">
-          <Link to="/cart">
+          <Link to="/cart" aria-label="View Cart">
             <BsCart3 className="nav-icon" />
             <div className={getTotalCartAmount() === 0 ? " " : "dot"}></div>
           </Link>
         </div>
-        <Link to="/user">
+        <Link to="/user" aria-label="User profile">
           <CgProfile className="nav-icon" />
         </Link>
       </div>
-    </div>
+    </nav>
   );
 };
 
